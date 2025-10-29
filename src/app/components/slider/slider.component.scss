@@ -1,0 +1,13 @@
+@import "keen-slider/keen-slider.min.css";
+
+.peek-slider {
+  overflow: visible;
+  padding-right: 16px;
+}
+.slide-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}

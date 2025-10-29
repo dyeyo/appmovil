@@ -1,0 +1,23 @@
+<app-toolbar [title]="title"></app-toolbar>
+<app-modal-filter (dataFilter)="loadEstatesFilters($event)"></app-modal-filter>
+
+<ion-content [fullscreen]="true">
+  <section class="ion-padding">
+    @if (loadingFirst) { @for (item of [1,2]; track $index) {
+      <app-loader></app-loader>
+    } } @else {
+    <app-list [items]="estates"></app-list>
+
+    <ion-infinite-scroll
+      (ionInfinite)="onIonInfinite($event)"
+      [disabled]="currentPage >= lastPage"
+    >
+      <!-- spinner nativo del infinite -->
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Cargando más..."
+      ></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    }
+  </section>
+</ion-content>

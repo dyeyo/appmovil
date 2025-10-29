@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1071596898931",
+    "project_id": "inmobilaap",
+    "storage_bucket": "inmobilaap.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1071596898931:android:b2e40306a4eef853e67806",
+        "android_client_info": {
+          "package_name": "com.InmobiliApp.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1071596898931-92ado27uivhpgksvb60rplksl3gek207.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.InmobiliApp.app",
+            "certificate_hash": "b7a1ed72e7e7c97a2b891c821b064c654f5dc482"
+          }
+        },
+        {
+          "client_id": "1071596898931-7dpli02kadaflbhq16sggm26e5vuc5uh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoJGpwyAN9wZlQDbZdIHwr9SgIQYy2dkA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1071596898931-7dpli02kadaflbhq16sggm26e5vuc5uh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

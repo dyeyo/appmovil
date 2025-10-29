@@ -1,0 +1,21 @@
+<app-toolbar [title]="'Mi perfil'" [tieneBuscar]="false"></app-toolbar>
+
+<ion-content [fullscreen]="true">
+  <section class="ion-padding">
+    @if (!hasLoggin) {
+    <ion-text class=""> <h1>Debe inicar sesion antes</h1> </ion-text>
+    } @else {
+    <div class="center-flex">
+      <ion-card class="card">
+        <img [src]="avatar | safeUrl" alt="Mi foto" />
+        <h2>{{miProfile?.name}}</h2>
+        <ion-text> {{miProfile?.email}} </ion-text>
+        <br />
+        <ion-button (click)="salir()" size="small" color="primary">
+          Cerrar sesión
+        </ion-button>
+      </ion-card>
+    </div>
+    }
+  </section>
+</ion-content>

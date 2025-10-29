@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">InmobiliApp</string>
+    <string name="title_activity_main">InmobiliApp</string>
+    <string name="package_name">com.InmobiliApp.app</string>
+    <string name="custom_url_scheme">com.InmobiliApp.app</string>
+</resources>

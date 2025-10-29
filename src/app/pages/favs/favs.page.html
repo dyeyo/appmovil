@@ -1,0 +1,11 @@
+<app-toolbar [title]="'Favoritos'" [tieneBuscar]="false"></app-toolbar>
+
+<ion-content [fullscreen]="true">
+  <section class="ion-padding">
+    @if (loadingFirst) { @for (item of [1,2]; track $index) {
+      <app-loader></app-loader>
+    } } @else {
+    <app-list [items]="favorites"></app-list>
+    }
+  </section>
+</ion-content>

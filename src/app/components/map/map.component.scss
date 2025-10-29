@@ -1,0 +1,20 @@
+// src/styles.scss o src/global.scss
+.map-card {
+  margin: 12px 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  --inner-padding: 0;
+}
+.map-toolbar {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--ion-color-light);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.map {
+  display: block;
+  height: 260px;
+  width: 100%;
+}

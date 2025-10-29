@@ -1,0 +1,29 @@
+<ion-header translucent="true" #hdr>
+   <app-toolbar [title]="detail.title" [tieneBuscar]="false"></app-toolbar>
+</ion-header>
+
+<ion-content
+  [fullscreen]="true"
+  scrollEvents="true"
+  (ionScroll)="onScroll($event)"
+>
+  <!-- Barra fija pegada al header -->
+  <div slot="fixed" class="section-nav" [class.show]="showNav" #nav>
+    <div class="nav-scroll">
+      @for (section of sections; track section.id) {
+      <button
+        class="pill"
+        [class.active]="activeId === section.id"
+        (click)="scrollTo(section.id)"
+      >
+        {{ section.label }}
+      </button>
+      }
+    </div>
+  </div>
+
+  <div class="nav-spacer" [class.on]="showNav"></div>
+  <section class="ion-padding">
+    <app-detail [detail]="detail"></app-detail>
+  </section>
+</ion-content>

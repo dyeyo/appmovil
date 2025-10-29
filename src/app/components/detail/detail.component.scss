@@ -1,0 +1,29 @@
+@import "keen-slider/keen-slider.min.css";
+
+/* Contenedor sin “peek” */
+.full-slider {
+  overflow: hidden; /* antes era visible */
+  padding-right: 0; /* sin padding extra */
+  width: 100%;
+}
+
+/* Elige UNA de estas dos formas de altura */
+
+/* A) Altura fija */
+.slide-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.col2 {
+  margin-top: -30px;
+}
+.acordion {
+  margin-top: -40px;
+}
+.infoheader {
+  margin-top: -2em;
+}

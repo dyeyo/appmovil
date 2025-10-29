@@ -1,0 +1,157 @@
+:host {
+  --hero-height: 42vh; /* ajusta el alto del banner */
+  --hero-image: url("../../../assets/img/banner.jpeg");
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #111827;
+}
+/* Sección HERO */
+.hero {
+  position: relative;
+  height: 42vh;
+  background: url("../../../assets/img/banner.jpeg") center/cover no-repeat;
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  color: #fff;
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+  }
+  .login {
+    position: absolute;
+    z-index: 2;
+    right: 1em;
+    padding: 5px;
+    align-items: center;
+    margin-top: 8px;
+  }
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+  }
+  .title {
+    position: absolute;
+    z-index: 2;
+    max-width: 90%;
+    top: 9em;
+  }
+
+  .search-card {
+    position: absolute;
+    bottom: -30px; // hace que flote un poco fuera del hero
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    z-index: 3; // por encima de todo
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+}
+
+h1 {
+  color: #f3f4f6;
+}
+.title {
+  margin-top: -6em;
+}
+/* Card del buscador, flotando sobre el banner */
+.search-card {
+  position: absolute;
+  left: 50%;
+  bottom: -36px; /* hace que flote por debajo del borde del banner */
+  transform: translateX(-50%);
+  width: min(92%, 880px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+  border-radius: 16px;
+
+  ion-card-content {
+    padding: 12px;
+  }
+
+  .filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr 160px;
+    gap: 10px;
+    margin-top: 8px;
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/* Sección de resultados para que no choque con el card flotante */
+.results {
+  padding: 56px 12px 16px; /* top extra para dejar espacio al card */
+}
+.results2 {
+  padding: 12px 16px; /* top extra para dejar espacio al card */
+}
+.text-center {
+  text-align: center;
+}
+.custom-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+
+  .card-image {
+    position: relative;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgb(0 0 0 / 29%); // oscuridad encima de la imagen
+      border-radius: 12px;
+    }
+
+    .overlay-text {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.4;
+      z-index: 2; // asegurar que quede encima del overlay
+    }
+  }
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 29%); // oscuridad encima de la imagen
+  border-radius: 12px;
+}
+.login {
+  display: flex;
+  flex-direction: row-reverse;
+  .colorIcon {
+    color: #fff;
+  }
+}

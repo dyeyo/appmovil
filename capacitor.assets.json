@@ -1,0 +1,5 @@
+{
+  "icon": { "source": "resources/icon.png", "backgroundColor": "#FFFFFF" },
+  "splash": { "source": "resources/splash.png" },
+  "android": { "padding": 0 }
+}

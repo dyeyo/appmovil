@@ -1,0 +1,148 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+// @import "maplibre-gl/dist/maplibre-gl.css";
+@import "leaflet/dist/leaflet.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+@import "swiper/css";
+@import "keen-slider/keen-slider.min.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import "@ionic/angular/css/palettes/dark.system.css";
+
+@import "tailwindcss";
+
+@import url("/src/assets/icon/fontawesome-free-7.0.1-web/css/all.min.css");
+
+* {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  // font-weight: 100;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+.primary {
+  background-color: #1e3a8a;
+  color: #ffff;
+}
+.btn-degradado {
+  background: #1e3a8a;
+  background: linear-gradient(
+    335deg,
+    rgba(30, 58, 138, 1) 0%,
+    rgba(5, 150, 105, 1) 100%
+  );
+}
+
+ion-tabs,
+ion-tab-bar {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.primary {
+  background: #1e3a8a !important;
+}
+
+ion-header,
+ion-toolbar {
+  --padding-top: max(12px, env(safe-area-inset-top));
+  --min-height: auto;
+}
+
+/* Permite varias líneas en el título */
+ion-title {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  line-height: 1.2; /* evita corte vertical */
+  padding-block: 4px 8px; /* un poco de aire arriba/abajo */
+}
+
+/* Si tu título está en un hero propio (no ion-title): */
+.hero-title {
+  /* Escala bien con accesibilidad: nunca demasiado chico ni gigante */
+  font-size: clamp(20px, 4vw + 0.8rem, 36px);
+  line-height: 1.2;
+  /* Respeta safe-area arriba (notch/estatus bar) */
+  padding-top: calc(env(safe-area-inset-top) + 12px);
+}
+.hero-header,
+ion-toolbar,
+ion-header {
+  overflow: visible; /* ¡nada de overflow:hidden en el contenedor! */
+}
+ion-toolbar { --min-height: auto; padding-block: 10px; }
+
+.textDetalle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* 🌞 Modo claro */
+.imgDetalle {
+  filter: brightness(0) invert(0); /* color oscuro */
+}
+
+/* 🌚 Modo oscuro */
+@media (prefers-color-scheme: dark) {
+  .imgDetalle {
+    filter: brightness(0) invert(1); /* vuelve el ícono blanco */
+  }
+}
+
+// 🎨 Paleta de colores sugerida
+
+// Azul profundo (Confianza y estabilidad): #1E3A8A
+
+// Dorado moderno (Éxito y valor): #F59E0B
+
+// Verde esmeralda (Crecimiento y finanzas): #059669
+
+// Gris claro (Equilibrio y neutralidad): #F3F4F6
+
+// Blanco puro (Claridad y frescura): #FFFFFF
+
+// Negro carbón (Texto elegante y contraste): #111827
+
+// 🔑 Cómo usarlos
+
+// Primario: Azul profundo → para botones principales, header y elementos clave.
+
+// Secundario: Dorado → para destacar promociones, acciones importantes o llamados a la acción.
+
+// Complementario: Verde esmeralda → para íconos relacionados con dinero, empeño o estado “disponible”.
+
+// Fondos: Blanco y gris claro → mantienen la interfaz limpia y ligera.
+
+// Texto: Negro carbón → buena legibilidad con contraste.

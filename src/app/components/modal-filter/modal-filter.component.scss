@@ -1,0 +1,19 @@
+ion-chip {
+  min-width: 100px; /* ancho mínimo */
+  height: 48px; /* más alto */
+  font-size: 16px; /* texto más grande */
+  padding: 0 16px; /* espacio interno */
+  white-space: normal; /* permite que el texto se acomode en varias líneas */
+  text-align: center; /* centra el texto */
+}
+.flexdiv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* espacio entre chips */
+}
+.divcenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    gap: 10px; /* espacio entre chips */
+}

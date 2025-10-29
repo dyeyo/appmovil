@@ -1,0 +1,31 @@
+.inner-gallery {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+  touch-action: pan-x;
+}
+
+.inner-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.inner-track {
+  display: flex;
+  gap: 0; /* sin espacio entre imágenes */
+  width: 100%;
+}
+
+.inner-slide {
+  flex: 0 0 100%;        /* cada imagen ocupa 100% del ancho del contenedor */
+  scroll-snap-align: start;
+}
+
+.inner-slide img {
+  display: block;
+  width: 100%;           /* ocupa todo el ancho del slide */
+  height: 200px;         /* ajusta según alto deseado */
+  object-fit: cover;     /* recorta manteniendo proporción */
+  border-radius: 12px 12px 0 0; /* opcional, bordes redondeados arriba */
+}

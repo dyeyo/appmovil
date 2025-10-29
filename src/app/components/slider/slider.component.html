@@ -1,0 +1,16 @@
+<div #sliderRef class="keen-slider peek-slider">
+  @for (c of items; track $index) {
+  <div class="keen-slider__slide">
+    <img
+      [src]="c.path"
+      loading="lazy"
+      decoding="async"
+      fetchpriority="low"
+      width="800"
+      height="600"
+      class="slide-img"
+      alt="foto"
+    />
+  </div>
+  }
+</div>

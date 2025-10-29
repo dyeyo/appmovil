@@ -1,0 +1,51 @@
+/* Barra pegada al borde superior (debajo del header real) */
+.section-nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0 !important; /* se sobrescribe en runtime con headerH px */
+  z-index: 10;
+  transform: translateY(-110%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+.section-nav.show {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  height: 44px; /* navH */
+  align-items: center;
+  padding: 0 12px;
+  background: var(--ion-background-color, #fff);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.nav-spacer {
+  height: 0;
+  transition: height 0.18s ease;
+}
+.nav-spacer.on {
+  height: 44px;
+}
+
+.pill {
+  white-space: nowrap;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: #fff;
+  color: var(--ion-color-medium);
+  font-size: 14px;
+}
+.pill.active {
+  color: var(--ion-color-primary);
+  border-color: color-mix(in oklab, var(--ion-color-primary) 45%, transparent);
+  background: color-mix(in oklab, var(--ion-color-primary) 12%, #fff);
+}
