@@ -21,6 +21,6 @@ export const environment = {
 /*
 CORRER PARA EL APK
 ionic build  
-npx cap copy android
-npx cap build android
+npx cap sync android
+npx cap open android
 */

@@ -5,7 +5,7 @@ const config: CapacitorConfig = {
   appName: 'InmobiliApp',        
   webDir: 'www',
   android: {
-    adjustMarginsForEdgeToEdge: 'auto',
+    adjustMarginsForEdgeToEdge: 'force',
   },
   plugins: {
     SplashScreen: {
@@ -18,6 +18,10 @@ const config: CapacitorConfig = {
       androidSpinnerStyle: 'large',
       iosSpinnerStyle: 'small',
     },
+    FirebaseAuthentication:{
+      skipNativeAuth: false,
+      providers: ['google.com']
+    }
   },
 };
 

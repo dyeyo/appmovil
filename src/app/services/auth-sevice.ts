@@ -14,6 +14,7 @@ import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { FirebaseAuthentication } from '@capacitor-firebase/authentication';
 import { firstValueFrom } from 'rxjs';
+import { Capacitor } from '@capacitor/core';
 
 @Injectable({
   providedIn: 'root',
@@ -25,7 +26,22 @@ export class AuthSevice {
   constructor(private http: HttpClient, private router: Router) {}
 
   async loginWithGoogle(): Promise<string> {
-    // 1. Login nativo con Google
+
+     let idToken: string | undefined;
+
+    if (Capacitor.isNativePlatform()) {
+      // Android/iOS con plugin nativo
+      const result = await FirebaseAuthentication.signInWithGoogle();
+      idToken = result.credential?.idToken ?? undefined;
+      if (!idToken) throw new Error('No se obtuvo idToken de Google (nativo)');
+      const cred = GoogleAuthProvider.credential(idToken);
+      await signInWithCredential(this.auth, cred);
+    } else {
+      // Web
+      const result = await signInWithPopup(this.auth, this.provider);
+      idToken = await result.user.getIdToken();
+    }
+    /* // 1. Login nativo con Google
     const result = await FirebaseAuthentication.signInWithGoogle();
 
     // 2. Crear credencial de Firebase
@@ -38,12 +54,12 @@ export class AuthSevice {
     const userCredential = await signInWithCredential(this.auth, credential);
     const firebaseIdToken = await userCredential.user.getIdToken();
 
-    console.log('Firebase ID Token =>', firebaseIdToken);
+    console.log('Firebase ID Token =>', firebaseIdToken); */
 
     // 4. Enviar a Laravel
     const apiRes = await firstValueFrom(
       this.http.post<{ token: string }>(`${environment.url_base}auth/google`, {
-        idToken: firebaseIdToken,
+        idToken: idToken,
       })
     );
 

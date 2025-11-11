@@ -25,7 +25,6 @@ import { ToolbarComponent } from 'src/app/shared/toolbar/toolbar.component';
     ToolbarComponent,
     IonText,
   ],
-  providers: [AuthSevice],
 })
 export class LoginPage implements OnInit {
   constructor(private auth: AuthSevice, private nav: NavController) {}

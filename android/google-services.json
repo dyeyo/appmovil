@@ -7,17 +7,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1071596898931:android:b2e40306a4eef853e67806",
+        "mobilesdk_app_id": "1:1071596898931:android:b9ca90a202237622e67806",
         "android_client_info": {
-          "package_name": "com.InmobiliApp.app"
+          "package_name": "com.Inmobilapp.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1071596898931-92ado27uivhpgksvb60rplksl3gek207.apps.googleusercontent.com",
+          "client_id": "1071596898931-sarmhs29626gv4bv07vqpaf0lu8gnnmd.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.InmobiliApp.app",
+            "package_name": "com.Inmobilapp.app",
             "certificate_hash": "b7a1ed72e7e7c97a2b891c821b064c654f5dc482"
           }
         },
