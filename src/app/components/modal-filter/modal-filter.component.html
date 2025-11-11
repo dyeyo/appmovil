@@ -1,3 +1,163 @@
 <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
- 
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="cancel()"></ion-button>
+        </ion-buttons>
+        <ion-title>Realiza tu busqueda</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="confirm()" [strong]="true">Buscar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <form [formGroup]="filterForm" class="h-full">
+      <ion-content [fullscreen]="true" class="ion-padding">
+        <ion-item>
+          <div>
+            <ion-input
+              formControlName="min_price"
+              label="Desde"
+              type="number"
+              placeholder="1000000"
+            ></ion-input>
+          </div>
+          <div>
+            <ion-input
+              formControlName="max_price"
+              label="Hasta"
+              type="number"
+              placeholder="10000000"
+            ></ion-input>
+          </div>
+        </ion-item>
+
+        <ion-item class="mt-3">
+          <div class="d-flex flex-column w-100">
+            <ion-label>Habitaciones</ion-label>
+            <ion-segment formControlName="n_habitaciones" class="mt-2 h-10">
+              <ion-segment-button value="1"
+                ><ion-label>1</ion-label></ion-segment-button
+              >
+              <ion-segment-button value="2"
+                ><ion-label>2</ion-label></ion-segment-button
+              >
+              <ion-segment-button value="3"
+                ><ion-label>3</ion-label></ion-segment-button
+              >
+              <ion-segment-button value="4"
+                ><ion-label>+4</ion-label></ion-segment-button
+              >
+            </ion-segment>
+          </div>
+        </ion-item>
+
+        <ion-item class="mt-3">
+          <div class="d-flex flex-column w-100">
+            <ion-label>Baños</ion-label>
+            <ion-segment formControlName="n_banos" class="mt-2 h-10">
+              <ion-segment-button value="1"
+                ><ion-label>1</ion-label></ion-segment-button
+              >
+              <ion-segment-button value="2"
+                ><ion-label>+2</ion-label></ion-segment-button
+              >
+            </ion-segment>
+          </div>
+        </ion-item>
+
+        <ion-item class="mt-3">
+          <div class="d-flex flex-column w-100">
+            <ion-label>Estrato</ion-label>
+            <ion-segment formControlName="estrato" class="mt-2 h-10">
+              <ion-segment-button value="1"
+                ><ion-label>1</ion-label></ion-segment-button
+              >
+              <ion-segment-button value="2"
+                ><ion-label>2</ion-label></ion-segment-button
+              >
+              <ion-segment-button value="3"
+                ><ion-label>3</ion-label></ion-segment-button
+              >
+              <ion-segment-button value="4"
+                ><ion-label>4</ion-label></ion-segment-button
+              >
+            </ion-segment>
+          </div>
+        </ion-item>
+
+        <ion-item class="mt-3">
+          <ion-select
+            formControlName="type_id"
+            label="Inmueble"
+            label-placement="fixed"
+            placeholder="Tipo de inmueble"
+          >
+            <!-- SI SE CAMBIA ACA SE CAMBIA EN LA BASE DE DATOS -->
+            <ion-select-option value="1">Apartamento</ion-select-option>
+            <ion-select-option value="2">Casa</ion-select-option>
+            <ion-select-option value="3">Lote</ion-select-option>
+            <ion-select-option value="4">Local</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item class="mt-3">
+          <ion-select
+            formControlName="contrato"
+            label="Contrato"
+            label-placement="fixed"
+            placeholder="Tipo de contrato"
+          >
+            <ion-select-option value="Arrendo">Arrendo</ion-select-option>
+            <ion-select-option value="Empeno">Empeño</ion-select-option>
+            <ion-select-option value="Venta">Venta</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item class="mt-3">
+          <ion-label>Extras</ion-label>
+        </ion-item>
+
+        <ion-item class="mt-3">
+          <div class="mt-2 flexdiv">
+            @for(item of features; track $index){
+            <ion-chip
+              [color]="selected.includes(item.id) ? 'primary' : 'medium'"
+              (click)="toggle(item.id)"
+              class="chip-lg"
+            >
+              <ion-label style="text-align: center !important">{{
+                item.name
+              }}</ion-label>
+            </ion-chip>
+            }
+          </div>
+        </ion-item>
+      </ion-content>
+    </form>
+    <ion-footer class="mt-3">
+      <ion-toolbar class="ion-padding divcenter">
+        <ion-row>
+          <ion-col size="6" class="pe-2">
+            <ion-button
+              size="small"
+              expand="block"
+              fill="outline"
+              (click)="clear()"
+              >Limpiar</ion-button
+            >
+          </ion-col>
+          <ion-col size="6">
+            <ion-button
+              size="small"
+              expand="block"
+              color="primary"
+              (click)="confirm()"
+              >Buscar</ion-button
+            >
+          </ion-col>
+        </ion-row>
+      </ion-toolbar>
+    </ion-footer>
+  </ng-template>
 </ion-modal>

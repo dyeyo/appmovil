@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
@@ -10,6 +10,7 @@ import {
 import { AuthSevice } from 'src/app/services/auth-sevice';
 import { NavController } from '@ionic/angular';
 import { ToolbarComponent } from 'src/app/shared/toolbar/toolbar.component';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -24,9 +25,12 @@ import { ToolbarComponent } from 'src/app/shared/toolbar/toolbar.component';
     FormsModule,
     ToolbarComponent,
     IonText,
+    RouterLink
   ],
 })
 export class LoginPage implements OnInit {
+
+  
   constructor(private auth: AuthSevice, private nav: NavController) {}
   
   ngOnInit() {}
