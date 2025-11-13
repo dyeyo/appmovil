@@ -1,4 +1,4 @@
-package com.InmobiliApp.app;
+package com.inmobiliapp.app;
 
 import com.getcapacitor.BridgeActivity;
 
